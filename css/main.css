@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic);
+
+
+
+body {
+	font-family: 'Open', 'Helvetica Neue', 'sans-serif'; 
+	background-image: url("../img/Slide6434764_1024x1024-1.png"); 
+	font-size: 20px; 
+}
+
+#intro {
+	font-family: 'Yanone', 'Helvetica Neue', 'sans-serif'; 
+	font-size: 70px; 
+	color: #fdfdfd; 
+	background-color: #408f92;  
+	padding-bottom: 80px; 
+	padding-top: 20px; 
+	padding: 1em; 
+}
+#mary {
+	font-style: italic;
+	font-size: 15px; 
+}
+
+h1 {
+	font-family: 'Yanone', 'Helvetica Neue', 'sans-serif'; 
+	background-color: #408f92; 
+	color: #e5f3ef;	
+	padding: 1em;
+}
+
+h2 {
+	font-size: 30px; 
+
+}
+
+ul {
+ padding-left:0;   
+}
+
+ul li  {
+ list-style-position:inside
+}
+
+#intro, h1 {
+	text-align: center; 
+}
