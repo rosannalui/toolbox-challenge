@@ -38,7 +38,7 @@ var imageFiles =[
 ]; 
 
 
-//shuffle the array then pull first 8 
+//shuffle the array then pull first 8 numbers twice into an array 
 var shuffledArray = _.shuffle(imageNum); 
 var firstEight = _.first(shuffledArray, 8);
 var newArray = []; 
@@ -46,22 +46,22 @@ var newArray = [];
 		newArray.push(firstEight[i]); 
 		newArray.push(firstEight[i]); 
 } 
-
+//shuffle the order of the array
 var finalShuffle = _.shuffle(newArray); 
 console.log(finalShuffle);
 
 //Loop over an array of filenames, and create an image for them, packing into an array:
- 
 for (var i = 0; i < finalShuffle.length; i++) {
-    var image = new Image; //This is a placeholder
+    var image = new Image;
     image.src = 'img/tile' + finalShuffle[i] + '.jpg'; //Set the src attribute (imageFiles[i] is the current filename in the loop)
-    //pictures.push(image); //Append the new image into the pictures array
 }
 
-//for loop that creates game board with back images. append images to the div run through a for loop ; function to build 4x4 //make a button to start game 
+//for loop that creates game board with back images. 
+//append images to the div run through a for loop ; 
+//function to build 4x4 //make a button to start game 
 //Show the result:
 
-var start = 0; 
+var clicks = 0;  
 var blankSlate = $("#background1");
 //before the user clicks play 
 	for(var i = 0; i <finalShuffle.length; i++) {
@@ -75,12 +75,39 @@ var blankSlate = $("#background1");
 	}
 $('#background1 img').click(function() {
 	console.log($(this).data('reverseCard')); 
-});  
+	image.attr("src","img/tile-back.png"); 
+	$(this).attr("src", $(this).data('reverseCard'));
+	clicks++; 
 
-function firstGame() {
+	//if the user clicks 2 cards check if the cards are the same 
+	if(clicks>2) {
+			console.log("YAY"); 
+			clicks=0; 
+		} 
 
+		//do something if click is above 2 and checks if the images are the same
+		//if it is not the same then click resets to 0 and the images flip back
+
+	console.log(clicks); 
 	
-}
+	});  
+
+
+
+
+
+
+
+	//flips over first card that the user clicks 
+		//switch tiles that the user clicks on 
+	//if user clicks a second card then check if it is the same
+	//if it is the same it should remain on the screen 
+
+
+
+
+
+
 
 
 
