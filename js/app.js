@@ -30,7 +30,8 @@ var firstCard;
 var secondCard;
 var matches=0;  
 var clicks = 1;
-var storeImage; 
+var storeImage;
+var storeSecond; 
 var blankSlate = $("#background1");
 //before the user clicks play 
 	for(var i = 0; i <finalShuffle.length; i++) {
@@ -46,31 +47,26 @@ $('#background1 img').click(function() {
 	console.log($(this).data('reverseCard')); 
 	//image.attr("src","img/tile-back.png"); 
 	$(this).attr("src", $(this).data('reverseCard'));
-	
 	console.log(clicks);   
 
 	if(clicks==1) {
 		firstCard = $(this).data('reverseCard');
 		console.log("this works"+ clicks);
 		storeImage = $(this); 
-		
-	
-	
 	//if the user clicks 2 cards check if the cards are the same 
 	 } else if (clicks==2) {
 			console.log("Clicks = 2"); 
 			secondCard = $(this).data('reverseCard');
+			storeSecond = $(this); 
 				if(firstCard==secondCard) {
-					console.log("Succcess!!!"); 
 					matches++; 
 				} else {
 					//create a timer with a pause; 
-					//image clicked first time 
-					storeImage.attr("src","img/tile-back.png");
-					//image last clicked 
-					$(this).attr("src","img/tile-back.png");
-
-					console.log("FAILUREEEE"); 
+					setTimeout(function(){
+						storeImage.attr("src","img/tile-back.png");
+						storeSecond.attr("src","img/tile-back.png");
+						//$(this).attr("src","img/tile-back.png");
+					}, 1000);
 				}
 			//if firstCard == secondCard then do something, else reset back
 			clicks=0; 
