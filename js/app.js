@@ -13,8 +13,7 @@ var myFirstClick = false;
 var firstCard;
 var secondCard;  
 var clicks = 1;
-var storeImage;
-var storeExtra; 
+var storeImage; 
 var totalTries = 0; 
 var storeSecond; 
 
