@@ -10,17 +10,21 @@ body {
 	font-size: 20px; 
 }
 
-#button {
-	margin-top: 50px;
-	position: fixed; 
-	top: 31%; 
-	margin-left: 460px; 
-}
 
 #background1 img {
 	border: 3px; 
 	border-color: #33ADAD;  
 	border-style: solid; 
+}
+
+#stats {
+	background-color: #408f92;
+	color: white; 
+	padding: 10px;
+	position: fixed; 
+	z-index: 100;
+	top: 0px; 
+	left: 0px; 
 }
 
 #background1 {
