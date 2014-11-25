@@ -7,7 +7,7 @@
 //the user would have the option to click play again to play again or reset game. 
 
 var matches = 0; 
-var remaining = 16; 
+var remaining = 8; 
 var failed = 0; 
 var firstCard;
 var secondCard;  
@@ -76,17 +76,16 @@ function onReady (){
 
 					if(firstCard==secondCard) { 
 						matches++; 
-						remaining--; 
-						$('matches').text(matches); 
-						$('remains').text(remaining); 
+						remaining--;
+						document.getElementById('match' ).innerHTML = matches; 
+						document.getElementById('remain' ).innerHTML = remaining; 
 						$('#background1 img').on('click', clicky);		
 						if(matches==8) {
 							alert("You won! You took " + totalTries + " tries.");
 							}								
 					} else {
 						failed++; 
-						$('failed').text(fail); 
-
+						document.getElementById('fail' ).innerHTML = failed; 
 						//create a timer with a pause; 
 						setTimeout(function() {
 							storeImage.attr("src","img/tile-back.png");
@@ -96,18 +95,23 @@ function onReady (){
 					}
 				 
 				totalTries++; 
-				clicks=1;
 				console.log(totalTries +" tries"); 
 			} 
 		} 
-			
 	}
 
-
-
 document.addEventListener('DOMContentLoaded', onReady);
+/*
+var timeSpan = 0; 
+document.getElementById('remains').innerHTML = remaining; 
+		setTimeout(timefunction, 1000); 
 
-
+function timefunction() {
+			document.getElementById('play').innerHTML = timeSpan + " seconds";
+			timeSpan++; 
+			setTimeout(timefunction, 1000); 
+			}
+			*/
 
 
 //when someone first clicks start timer 
