@@ -8,7 +8,8 @@
 
 var matches = 0; 
 var remaining = 8; 
-var failed = 0; 
+var failed = 0;
+var myFirstClick = false;  
 var firstCard;
 var secondCard;  
 var clicks = 1;
@@ -55,6 +56,10 @@ function onReady (){
 
 
 	function clicky() {
+		if(myFirstClick==false) {
+			setTimeout(timefunction, 1000); 
+			myFirstClick=true; 
+		} 
 		
 		if(clicks==1) {
 			$(this).attr("src", $(this).data('reverseCard')); 
@@ -101,25 +106,17 @@ function onReady (){
 	}
 
 document.addEventListener('DOMContentLoaded', onReady);
-/*
-var timeSpan = 0; 
+
+var timeSpan = 1; 
 document.getElementById('remains').innerHTML = remaining; 
-		setTimeout(timefunction, 1000); 
+	
 
 function timefunction() {
 			document.getElementById('play').innerHTML = timeSpan + " seconds";
 			timeSpan++; 
 			setTimeout(timefunction, 1000); 
 			}
-			*/
-
-
-//when someone first clicks start timer 
-//starts game 
-//click function that you can call 
-//new game will call a function 
-//when click event happen 
-
+	
 
 
 
