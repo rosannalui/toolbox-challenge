@@ -77,10 +77,10 @@ function onReady (){
 					if(firstCard==secondCard) { 
 						matches++; 
 						remaining--;
+						$('#background1 img').on('click', clicky);
 						document.getElementById('match' ).innerHTML = matches; 
-						document.getElementById('remain' ).innerHTML = remaining; 
-						$('#background1 img').on('click', clicky);		
-						if(matches==8) {
+						document.getElementById('remains').innerHTML = remaining;
+						if(matches == 8) {
 							alert("You won! You took " + totalTries + " tries.");
 							}								
 					} else {
@@ -93,9 +93,9 @@ function onReady (){
 							$('#background1 img').on('click', clicky);
 						}, 1000);
 					}
-				 
+				clicks=1; 
 				totalTries++; 
-				console.log(totalTries +" tries"); 
+				console.log(totalTries +" tries"); 	
 			} 
 		} 
 	}
