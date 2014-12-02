@@ -52,8 +52,6 @@ function onReady (){
 			blankSlate.append(image);
 		}
 	$('#background1 img').on('click', clicky);
-
-
 	function clicky() {
 		if(myFirstClick==false) {
 			setTimeout(timefunction, 1000); 
